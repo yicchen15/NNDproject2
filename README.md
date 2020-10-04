@@ -33,6 +33,13 @@ batch_size=100 (將資料集任取90筆為一組)
 
 #### B.	圖片影像處理
 圖片原先為256pixels\*256pixels 先將圖片尺寸調整為128pixels\*128pixels，再放入模型進行訓練，驗證集也相同調整為128pixels\*128pixels；由於商品色彩也是一項重要資訊，所以保留RGB三通道。
+##### b1.增加訓練集 Data Augmentation
+將圖片資料翻轉、平移、縮放，增加資料量與變化
+
+* https://medium.com/@CinnamonAITaiwan/cnn%E5%85%A5%E9%96%80-%E5%9C%96%E5%83%8F%E5%A2%9E%E5%BC%B7-fa654d36dafc
+* https://medium.com/@shihaoticking/%E5%AF%A6%E4%BD%9C%E8%B3%87%E6%96%99%E5%BC%B7%E5%8C%96-data-augmentation-%E5%AF%A6%E7%8F%BE%E5%9C%96%E7%89%87%E7%BF%BB%E8%BD%89-%E5%B9%B3%E7%A7%BB-%E7%B8%AE%E6%94%BE-4b37d4400ffb
+
+
 
 #### C.	調整資料型態
 將訓練集180張128pixels\*128pixels 合併為一個img_tra矩陣，以便訓練使用；label 轉為獨熱編碼，用來驗證輸出結果。將驗證集50張128pixels\*128pixels的圖片合併為一個umg_val的矩陣；label 也轉為獨熱編碼，用來驗證輸出結果。
