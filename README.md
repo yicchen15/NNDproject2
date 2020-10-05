@@ -53,8 +53,9 @@ batch_size=100 (將資料集任取90筆為一組)
 #### 10/5更新
 project2-ImageDataGenerator.ipynb 
 使用資料增量，想提高驗證時的準確率，但因圖片變多，訓練模型時CPU使用率100%怕操壞，所以試著使用GPU終於可行。
+
 ##### B1.增加訓練集 Data Augmentation
-將圖片資料翻轉、平移、縮放，增加資料量與變化
+使用keras中的`ImageDataGenerator`，將圖片資料翻轉、平移、縮放，增加資料量與變化，並運用`im_new = batch[0]*0.97`稍微調整圖片像素值。
 
 * https://medium.com/@CinnamonAITaiwan/cnn%E5%85%A5%E9%96%80-%E5%9C%96%E5%83%8F%E5%A2%9E%E5%BC%B7-fa654d36dafc
 * https://medium.com/@shihaoticking/%E5%AF%A6%E4%BD%9C%E8%B3%87%E6%96%99%E5%BC%B7%E5%8C%96-data-augmentation-%E5%AF%A6%E7%8F%BE%E5%9C%96%E7%89%87%E7%BF%BB%E8%BD%89-%E5%B9%B3%E7%A7%BB-%E7%B8%AE%E6%94%BE-4b37d4400ffb
@@ -65,3 +66,7 @@ project2-ImageDataGenerator.ipynb
 參考以下資料：
 * https://medium.com/@WhoYoung99/2018%E6%9C%80%E6%96%B0win10%E5%AE%89%E8%A3%9Dtensorflow-gpu-keras-8b3f8652509a
 * 除錯用 https://stackoverflow.com/questions/60581677/attributeerror-module-tensorflow-core-api-v2-config-has-no-attribute-expe
+
+##### 結果
+原先訓練模型，每個epoch約需60s左右，運用GPU僅需2s左右，速度快約30倍。
+透過資料增量(每一張再生3張)，訓練集從180張圖片增加到720張，且新圖片有調整像素值，避免與原先的圖片過於相似，最終驗證集(Validation)50張圖片，準確率達8成。
