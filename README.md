@@ -2,8 +2,8 @@
  
 ### 題目
 A.
-Training data 共有180張jpg圖片，共18樣商品，每張的尺寸為256X256像數。
-Validation data共有50張jpg圖片，共18樣商品，每張的尺寸為256X256像數。
+Training data 共有180張jpg圖片，共18樣商品，每張的尺寸為256\*256像素。
+Validation data共有50張jpg圖片，共18樣商品，每張的尺寸為256\*256像素。
 分類標籤與商品名的對照表請參考Product.txt或Product.xlsx。
 
 B.  
@@ -23,7 +23,7 @@ Project2有兩部分，第一部分是程式佔80%，第二份是紙本Project�
 
 ### 簡介
 
-Training data 共有180張jpg圖片，共18樣商品，每張為256\*256 pixels組成，其label為180\*1之向量；Validation data共有50張jpg圖片，共18樣商品，每張的尺寸為256\*256 pixels，其label為50\*1之向量。將數據運用Tensorflow建立模型並訓練，。
+Training data 共有180張jpg圖片，共18樣商品，每張為256\*256 pixels組成，其label為180\*1之向量；Validation data共有50張jpg圖片，共18樣商品，每張的尺寸為256\*256 pixels，其label為50\*1之向量。將數據運用Keras建立模型並訓練。
 
 ### 流程
 #### A.	參數設置 
