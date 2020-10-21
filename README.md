@@ -28,8 +28,8 @@ Training data 共有180張jpg圖片，共18樣商品，每張為256\*256 pixels�
 ### 流程
 #### A.	參數設置 
 
-epochs=50 (訓練50次)
-batch_size=100 (將資料集任取90筆為一組)
+* epochs=50 (訓練50次)
+* batch_size=100 (將資料集任取90筆為一組)
 
 #### B.	圖片影像處理
 圖片原先為256pixels\*256pixels 先將圖片尺寸調整為128pixels\*128pixels，再放入模型進行訓練，驗證集也相同調整為128pixels\*128pixels；由於商品色彩也是一項重要資訊，所以保留RGB三通道。
