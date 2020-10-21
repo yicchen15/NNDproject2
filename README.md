@@ -38,7 +38,7 @@ Training data 共有180張jpg圖片，共18樣商品，每張為256\*256 pixels�
 將訓練集180張128pixels\*128pixels 合併為一個img_tra矩陣，以便訓練使用；label 轉為獨熱編碼，用來驗證輸出結果。將驗證集50張128pixels\*128pixels的圖片合併為一個umg_val的矩陣；label 也轉為獨熱編碼，用來驗證輸出結果。
 
 #### D.	架構神經網路
-建構卷積神經網路，選用Keras套件，架構依序2個隱藏層(包括卷積層與池化層)，再經過平滑層、ReLU激活函數，避免Overfitting 故Dropout 25%的特徵，最後輸出層以Softmax函數得到預測結果。運用cross_entropy來得到loss值再修正Weights和biases。訓練數據批量每次90筆，採隨機選取180筆中90筆，
+建構卷積神經網路，選用Keras套件，架構依序2個隱藏層(包括卷積層與池化層)，再經過平滑層、ReLU激活函數，避免Overfitting 故Dropout 25%的特徵，最後輸出層以Softmax函數得到預測結果。運用cross_entropy來得到loss值再修正Weights和biases。訓練數據批量每次90筆，採隨機選取180筆中90筆。
 
 ### 結論
 為縮短訓練時間、減少參數，故將圖片尺寸調整為128pixels\*128pixels。在第15次訓練準確率集達到9成，表示這神經網路已夠應付18類商品分類，不需再增加神經網路複雜度。
